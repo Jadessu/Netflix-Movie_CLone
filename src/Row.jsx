@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react"
 import React from "react"
 import axios from "./axios"
+import "./Row.css"
 
 
 
 function Row({ title, fetchUrl }){
     const [movies, setMovies] = useState([])
-    const imageUrl = "https://image.tmdb.org/t/p/w185";
+    const imageUrl = "https://image.tmdb.org/t/p/original";
+;
 
     useEffect(() => {
         async function fetchData(){
@@ -24,7 +26,7 @@ function Row({ title, fetchUrl }){
           <h2>{title}</h2>
           <div className="row__posters">
               {movies.map( movie => (
-                  <img src={imageUrl +  movie.poster_path} alt={movie.name}/>
+                  <img className="row__poster" src={imageUrl +  movie.poster_path} alt={movie.name}/>
                   
               ))}
 
