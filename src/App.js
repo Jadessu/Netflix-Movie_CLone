@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Banner/>
      
      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
