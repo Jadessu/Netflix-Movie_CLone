@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import React from "react"
 import axios from "./axios"
 import "./Row.css"
+import YouTube from "react-youtube"
 
 
 
@@ -20,7 +21,13 @@ function Row({ title, fetchUrl, isLargeRow }){
         // Anytime the fetch is dependant on any props, those props must be passed as a dependancy.
     }, [fetchUrl])
 
-
+  const opts = {
+    height: "390",
+    width: "99%",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
     return (
         <div className="row">   
           <h2>{title}</h2>
@@ -35,7 +42,7 @@ function Row({ title, fetchUrl, isLargeRow }){
 
           </div>
 
-       
+       <Youtube videoId={trailerUrl} opts={opts} />
         </div>
 
     )
