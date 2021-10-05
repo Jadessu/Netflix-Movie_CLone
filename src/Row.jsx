@@ -3,11 +3,13 @@ import React from "react"
 import axios from "./axios"
 import "./Row.css"
 import YouTube from "react-youtube"
+import movieTrailer from "movie-trailer"
 
 
 
 function Row({ title, fetchUrl, isLargeRow }){
     const [movies, setMovies] = useState([])
+    const [trailerUrl, setTrailerUrl] = useState("")
     const imageUrl = "https://image.tmdb.org/t/p/original";
 ;
 
@@ -25,8 +27,22 @@ function Row({ title, fetchUrl, isLargeRow }){
     height: "390",
     width: "99%",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
     },
+  };
+
+  const handleClick = (movie) => {
+    // console.table(movie?.title)
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.title || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => console.log(error));
+    }
   };
     return (
         <div className="row">   
@@ -42,7 +58,7 @@ function Row({ title, fetchUrl, isLargeRow }){
 
           </div>
 
-       <Youtube videoId={trailerUrl} opts={opts} />
+       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
         </div>
 
     )
