@@ -7,6 +7,9 @@ import Navbar from './Navbar';
 function App() {
   return (
     <div className="App">
+      <div className="sam">
+        <h1> HOW DO YOU LIKE WHAT YOU SEE SAM?</h1>
+      </div>
       <Navbar/>
       <Banner/>
      

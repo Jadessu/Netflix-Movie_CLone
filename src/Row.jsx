@@ -17,6 +17,7 @@ function Row({ title, fetchUrl, isLargeRow }){
         async function fetchData(){
             const request = await axios.get(fetchUrl)
            setMovies(request.data.results)
+           console.log(request.data.results)
         }
         fetchData()
         // Anytime the fetch is dependant on any props, those props must be passed as a dependancy.
@@ -44,18 +45,28 @@ function Row({ title, fetchUrl, isLargeRow }){
     }
   };
     return (
+     
         <div className="row">   
+        
           <h2>{title}</h2>
           <div className="row__posters">
               {movies.map( movie => (
+                
                   <img 
                   key={movie.id}
                   onClick={() => handleClick(movie)}
                   className={`row__poster ${isLargeRow && "row__posterLarge"}`} 
                   src={isLargeRow ? imageUrl +  movie.poster_path : imageUrl + movie.backdrop_path}
-                   alt={movie.name}/>
+                   alt={movie.title}/>
+                   
+                   
+                   
+                   
+               
                   
               ))}
+              
+              
 
           </div>
 
@@ -63,5 +74,7 @@ function Row({ title, fetchUrl, isLargeRow }){
         </div>
 
     )
+   
+    
 }
 export default Row

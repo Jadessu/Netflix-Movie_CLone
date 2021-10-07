@@ -5,3 +5,9 @@
 .App{
   background-color: #111;
 }
+
+.sam{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
