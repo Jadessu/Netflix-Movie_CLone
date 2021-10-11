@@ -58,15 +58,8 @@ function Row({ title, fetchUrl, isLargeRow }){
                   className={`row__poster ${isLargeRow && "row__posterLarge"}`} 
                   src={isLargeRow ? imageUrl +  movie.poster_path : imageUrl + movie.backdrop_path}
                    alt={movie.title}/>
-                   
-                   
-                   
-                   
-               
-                  
+ 
               ))}
-              
-              
 
           </div>
 
