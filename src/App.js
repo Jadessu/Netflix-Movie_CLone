@@ -11,10 +11,11 @@ import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <div className="App">
-      <h1> BRUV, WHEN YOU GONE GIVE ME MY HUG </h1>
+     
      
       <Router>
         <Switch>
+          
           <Route path="/" exact component={Movies} />
           <Route path="/movies" exact component={Movies} />
         </Switch>

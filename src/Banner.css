@@ -52,3 +52,11 @@
     height: 7.4rem;
     background-image: linear-gradient( 180deg, transparent, rgba(37, 37, 37, 0.61),#111);
 }
+
+.jospeh-title{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

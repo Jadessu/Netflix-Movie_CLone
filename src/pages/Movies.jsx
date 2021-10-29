@@ -4,12 +4,15 @@ import Navbar from "../Navbar";
 import "../App.css"
 import React from "react"
 import Row from "../Row";
+import Joseph from "../Joseph";
 
 
 function Movies() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Joseph/>
+      
+      <Navbar />
       <Banner />
 
       <Row
