@@ -13,13 +13,7 @@ function App() {
     <div className="App">
      
      
-      <Router>
-        <Switch>
-          
-          <Route path="/" exact component={Movies} />
-          <Route path="/movies" exact component={Movies} />
-        </Switch>
-      </Router>
+<Movies/>
     </div>
   );
 }
